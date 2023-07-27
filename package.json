@@ -1,10 +1,10 @@
 {
-  "name": "nestjs-boilerplate",
+  "name": "menfess",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "menfess API",
+  "author": "Fadhiil Rachman",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "scripts": {
     "typeorm": "env-cmd ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
     "migration:generate": "npm run typeorm -- --dataSource=src/database/data-source.ts migration:generate",

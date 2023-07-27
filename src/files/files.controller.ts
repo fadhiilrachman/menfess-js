@@ -3,6 +3,7 @@ import {
   Get,
   Param,
   Post,
+  Request,
   Response,
   UploadedFile,
   UseGuards,
@@ -39,8 +40,10 @@ export class FilesController {
   @UseInterceptors(FileInterceptor('file'))
   async uploadFile(
     @UploadedFile() file: Express.Multer.File | Express.MulterS3.File,
+    @Request() req,
   ) {
-    return this.filesService.uploadFile(file);
+    const userId = req.user.id;
+    return this.filesService.uploadFile(file, userId);
   }
 
   @Get(':path')

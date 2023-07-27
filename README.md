@@ -6,6 +6,7 @@ Menfess.app API
 
 - [Quick run](#quick-run)
 - [Database utils](#database-utils)
+- [Links](#links)
 - [Tests](#tests)
 
 ## Quick run
@@ -28,32 +29,36 @@ docker compose logs
 Generate migration
 
 ```bash
-npm run migration:generate -- src/database/migrations/CreateNameTable
+npx run migration:generate -- src/database/migrations/CreateNameTable
 ```
 
 Run migration
 
 ```bash
-npm run migration:run
+npx run migration:run
 ```
 
 Revert migration
 
 ```bash
-npm run migration:revert
+npx run migration:revert
 ```
 
 Drop all tables in database
 
 ```bash
-npm run schema:drop
+npx run schema:drop
 ```
 
 Run seed
 
 ```bash
-npm run seed:run
+npx run seed:run
 ```
+
+## Links
+
+- Swagger: <http://localhost:3000/docs>
 
 ## Tests
 

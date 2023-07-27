@@ -15,6 +15,7 @@ export class FilesService {
 
   async uploadFile(
     file: Express.Multer.File | Express.MulterS3.File,
+    userId: number,
   ): Promise<FileEntity> {
     if (!file) {
       throw new HttpException(
@@ -40,6 +41,7 @@ export class FilesService {
         path: path[
           this.configService.getOrThrow('file.driver', { infer: true })
         ],
+        userId,
       }),
     );
   }

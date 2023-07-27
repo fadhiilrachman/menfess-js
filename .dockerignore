@@ -2,3 +2,5 @@
 /.data
 /dist
 /files
+/.bash
+/.docker
