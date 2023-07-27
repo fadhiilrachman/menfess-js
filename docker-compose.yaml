@@ -1,0 +1,38 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:15.3-alpine
+    container_name: "menfess-db"
+    ports:
+      - 54329:${DATABASE_PORT}
+    volumes:
+      - ./.data/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
+    restart: unless-stopped
+    networks:
+      - menfess-net
+
+  # Uncomment to use redis
+  # redis:
+  #   container_name: "menfess-redis"
+  #   image: redis:7-alpine
+  #   ports:
+  #     - 6379:6379
+
+  api:
+    container_name: "menfess-api"
+    build:
+      context: .
+      dockerfile: ./.docker/api.dockerfile
+    ports:
+      - ${APP_PORT}:${APP_PORT}
+    restart: unless-stopped
+    networks:
+      - menfess-net
+
+networks:
+  menfess-net:
+    driver: bridge
