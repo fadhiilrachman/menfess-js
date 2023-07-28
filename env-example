@@ -56,3 +56,13 @@ TWITTER_CONSUMER_KEY=
 TWITTER_CONSUMER_SECRET=
 
 WORKER_HOST=redis://redis:6379/1
+
+# Telegram Bot
+TELEGRAM_BOT_TOKEN=
+# how to get chatId => https://api.telegram.org/bot<TELEGRAM_BOT_TOKEN>/getUpdates and cursor to message.chat.id
+TELEGRAM_CHAT_ID=
+
+# Threads Bot
+THREAD_USERNAME=
+THREAD_PASSWORD=
+THREAD_DEVICE_ID=android-1ekyostvfgsg0000
